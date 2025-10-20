@@ -13,4 +13,15 @@ class TaskController extends Controller
         $task = Task::create($request->validated());
         return response()->json($task, 201);
     }
+
+    // Atualiza uma tarefa (status, título, descrição)
+    public function update(TaskRequest $request, $id)
+    {
+        $task = Task::find($id);
+        if (!$task) {
+            return response()->json(['message' => 'Tarefa não encontrada'], 404);
+        }
+        $task->update($request->validated());
+        return response()->json($task);
+    }
 }
