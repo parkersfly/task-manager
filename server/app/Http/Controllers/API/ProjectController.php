@@ -16,4 +16,11 @@ class ProjectController extends Controller
          $projects = Project::with('tasks')->get();
          return response()->json($projects);
     }
+
+    // Cria um novo projeto
+    public function store(ProjectRequest $request)
+    {
+        $project = Project::create($request->validated());
+        return response()->json($project, 201);
+    }
 }
