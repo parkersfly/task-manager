@@ -24,4 +24,15 @@ class TaskController extends Controller
         $task->update($request->validated());
         return response()->json($task);
     }
+
+    // Remove uma tarefa
+    public function destroy($id)
+    {
+        $task = Task::find($id);
+        if (!$task) {
+            return response()->json(['message' => 'Tarefa não encontrada'], 404);
+        }
+        $task->delete();
+        return response()->json(['message' => 'Tarefa removida com sucesso']);
+    }
 }
