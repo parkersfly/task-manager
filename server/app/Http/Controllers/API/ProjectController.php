@@ -23,4 +23,14 @@ class ProjectController extends Controller
         $project = Project::create($request->validated());
         return response()->json($project, 201);
     }
+
+    // Lista todas as tarefas de um projeto específico
+    public function tasks($id)
+    {
+        $project = Project::with('tasks')->find($id);
+        if (!$project) {
+            return response()->json(['message' => 'Projeto não encontrado'], 404);
+        }
+        return response()->json($project->tasks);
+    }
 }
