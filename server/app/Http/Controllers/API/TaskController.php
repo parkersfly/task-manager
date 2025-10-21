@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Project;
+use App\Http\Requests\TaskRequest;
+use App\Models\Task;
+
 
 class TaskController extends Controller
 {
