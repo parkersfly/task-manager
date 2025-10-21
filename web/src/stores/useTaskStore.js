@@ -29,6 +29,11 @@ export const useTaskStore = defineStore('taskStore', {
       await this.fetchTasks(this.selectedProjectId)
     },
 
+    async selectProject(id) {
+      this.selectedProjectId = id
+      await this.fetchTasks(id)
+    },
+
     async fetchTasks(projectId) {
       const { data } = await api.get(`/projects/${projectId}/tasks`)
       this.tasks = data
