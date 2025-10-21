@@ -38,5 +38,18 @@ export const useTaskStore = defineStore('taskStore', {
       const { data } = await api.get(`/projects/${projectId}/tasks`)
       this.tasks = data
     },
+
+    async addTask(title) {
+      const { data } = await api.post('/tasks', {
+        title,
+        project_id: this.selectedProjectId,
+      })
+
+      if (!data.status) {
+        data.status = 'pendente'
+      }
+
+      this.tasks = [...this.tasks, data]
+    },
   }
 })
