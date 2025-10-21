@@ -5,7 +5,7 @@
         <ProjectList />
       </div>
       <div class="col-9 p-3">
-        <!-- TaskBoard -->
+        <TaskBoard />
       </div>
     </div>
   </div>
@@ -13,4 +13,5 @@
 
 <script setup>
 import ProjectList from './components/ProjectList.vue'
+import TaskBoard from './components/TaskBoard.vue'
 </script>
