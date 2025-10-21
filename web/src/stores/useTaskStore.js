@@ -51,5 +51,22 @@ export const useTaskStore = defineStore('taskStore', {
 
       this.tasks = [...this.tasks, data]
     },
+
+    async updateStatus(taskId, newStatus) {
+      const task = this.tasks.find(t => t.id === taskId)
+      if (!task) return
+
+      try {
+        await api.put(`/tasks/${taskId}`, {
+          title: task.title,
+          status: newStatus,
+          project_id: task.project_id,
+        })
+
+        task.status = newStatus
+      } catch (error) {
+        console.error('Erro ao atualizar tarefa:', error.response.data)
+      }
+    },
   }
 })
