@@ -68,5 +68,10 @@ export const useTaskStore = defineStore('taskStore', {
         console.error('Erro ao atualizar tarefa:', error.response.data)
       }
     },
+
+    async deleteTask(taskId) {
+      await api.delete(`/tasks/${taskId}`)
+      this.tasks = this.tasks.filter(t => t.id !== taskId)
+    },
   }
 })
