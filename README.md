@@ -70,3 +70,14 @@ npm run dev
 
 ```
 
+### Feedback
+
+Pergunta 1: Qual foi a maior dificuldade que você encontrou neste desafio e como você a resolveu?
+- o projeto foi desafiador, devido a ser meu primeiro contato com o vuejs e laravel. A maior dificuldade foi entender a estrutura, as diretivas e como funciona cada stack. Para entender mais sobre tive que recorrer ao auxílio da IA e estudar a documentação delas.
+
+Pergunta 2: Se você tivesse mais 4 horas para trabalhar neste projeto, o que você melhoraria ou adicionaria?
+- A funcinalidade para poder criar os projetos.
+
+Pergunta 3: Qual abordagem você usou para gerenciar o estado no Vue (ex: qual projeto está selecionado no momento) e por que você escolheu essa abordagem?
+- Pínia. Para centralizar os dados em que muitos componentes precisariam de acesso.
+
