@@ -51,7 +51,7 @@ composer install
 php artisan migrate
 
 # Rode o seeder
-php artisan db:seeder
+php artisan db:seed
 
 # Rode o servidor local
 php artisan serve
