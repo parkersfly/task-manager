@@ -16,6 +16,7 @@
 - Vue.js
 - JavaScript
 - Node.js / npm
+- Bootstrap
 
 ---
 
